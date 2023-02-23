@@ -1,4 +1,4 @@
-tmp/app.db
+db/app.db
 
 # Logs
 logs
