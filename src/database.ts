@@ -1,14 +1,11 @@
 import { knex as setupKnex, Knex } from "knex";
-import "dotenv/config"
-
-if (!process.env.DATABASE_URL) {
-    throw new Error("URL not found.");
-}
+import { env } from "./env";
+import "dotenv/config";
 
 export const config: Knex.Config = {
     client: "sqlite",
     connection: {
-        filename: `${process.env.DATABASE_URL}`
+        filename: `${env.DATABASE_URL}`
     },
     useNullAsDefault: true,
     migrations: {
